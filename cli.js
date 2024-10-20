@@ -1377,7 +1377,7 @@ async function init(packageJson, queries, options) {
           err: new Error("local-typed tracks aren't supported"),
           meta: {track: {uri: track[symbols.errorStack].uri}},
         };
-      const trackBaseName = `${prePadNum(track.track_number, track.total_tracks, 2)} ${track.name}`;
+      const trackBaseName = track.id; //`${prePadNum(track.track_number, track.total_tracks, 2)} ${track.name}`;
       const trackName = trackBaseName.concat(
         isPlaylist || (track.compilation && track.album_artist === 'Various Artists')
           ? ` \u2012 ${track.artists.join(', ')}`
